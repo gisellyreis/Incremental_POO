@@ -1,0 +1,51 @@
+System.out.println("Realizar Compra: \n");
+		System.out.println("Informe os dados do Funcionário: \n");
+		System.out.println("Nome do funcionário: \n");
+			String nomeF= sc.nextLine();
+		
+		System.out.println("Cpf do funcionário: \n");
+			int cpfF = sc.nextInt();
+		
+			String[] qualidade = new String[5];
+			Funcionario funcionario = new Funcionario(nomeF,cpfF,qualidade);
+			System.out.println("\n");
+		System.out.println("Informe os dados do Cliente: \n");
+		System.out.println("Nome do Cliente: \n");
+			String nomeC= sc.nextLine();
+       nomeC= sc.nextLine();
+		
+		System.out.println("Cpf do Cliente: \n");
+			int cpfC = sc.nextInt(); 
+			Cliente cliente = new Cliente(nomeC, cpfC);
+			
+		System.out.println("Informe os dados do Produto: \n");
+		System.out.println("Nome do produto: \n");
+			String nomeP = sc.nextLine(); 
+      nomeP = sc.nextLine();
+		
+		System.out.println("Preço do produto: \n");
+			double preco = sc.nextDouble();
+		
+		System.out.println("Código do produto:  \n");
+			String codigo = sc.nextLine();
+      
+		
+		System.out.println("Quantidade do produto:  \n");
+			int qtd = sc.nextInt();
+			Produto produto = new Produto(nomeP, preco, codigo);
+		
+		System.out.println("Data da compra:  \n");
+			String data = sc.nextLine();
+		
+		Venda novaVenda = new Venda(data, funcionario, cliente);
+		novaVenda.addItem(produto);
+
+
+
+
+        	public static Gerente promove(Funcionario funcionario) {
+		if(funcionario instanceof Vendedor)
+			return (Gerente)funcionario;
+		else
+			return (Vendedor)funcionario;
+	}
